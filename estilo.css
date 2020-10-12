@@ -1,0 +1,53 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    color: whitesmoke;
+    background: #000000;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #222222, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-family: condor-compressed, sans-serif;
+    font-size: 4rem;
+}
+
+.container {
+    width: 60%;
+    padding: 2rem;
+    /* border-radius: 5px;
+    box-shadow: 0 0 10px 2px; */
+}
+
+.btn-grid {
+    display: grid;
+    grid-template-columns: repeat(1, auto);
+    gap: 10px;
+    margin-top: 3rem;
+}
+
+.btn {
+    background-color: rgba(99, 99, 99, 0.39);
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: whitesmoke;
+    outline: none;
+    font-family: condor-compressed, sans-serif;
+    font-size: 3rem;
+    margin: 1rem;
+}
+
+.btn:hover {
+    background-color: whitesmoke;
+    border-color: whitesmoke;
+    color: black;
+    cursor: pointer;
+}
