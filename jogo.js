@@ -1,5 +1,19 @@
+//!opções que não tem o estado ficarem ali mas apagadinhas
+
+//!testar variáveis numéricas 
+
+//!sair e voltar da página
+
+//!testar som
+
+//!testar vídeo
+
+//!ver se é possível acrescentar espaços, vídeos ou imagens ou p5 no meio
+
+const containerElement = document.querySelector(".container");
 const textoElement = document.querySelector("#text");    
 const botoesElement = document.querySelector("#option-buttons");
+
 
 //objeto que guarda estato da personagem
 let estado = {};
@@ -12,6 +26,8 @@ function novoJogo(){
 function mostrarTexto(indexFragmentosDeTexto) {
     //O método find() retorna o valor do primeiro elemento do array que satisfizer a função de teste provida. Caso contrario, undefined é retornado.
     // const texto = fragmentosDeTexto.find(callback(element[, index[, array]])[, thisArg])
+    window.scrollTo(0, 0);
+    fadeIn(containerElement, 2);
     const texto = fragmentosDeTexto.find(fragmentosDeTexto => fragmentosDeTexto.id === indexFragmentosDeTexto);
     textoElement.innerText = texto.texto;
     while (botoesElement.firstChild){
@@ -36,9 +52,43 @@ function mostrarOpcao(opcao){
 }
 
 function selecionouOpcao(opcao){
-    const proximoFragmentoDeTextoId = opcao.proximoTexto;
-    estado = Object.assign(estado, opcao.definirEstado);
-    mostrarTexto(proximoFragmentoDeTextoId);
+    fadeOut(containerElement, 2);
+    setTimeout(function(){
+        const proximoFragmentoDeTextoId = opcao.proximoTexto;
+        estado = Object.assign(estado, opcao.definirEstado);
+        mostrarTexto(proximoFragmentoDeTextoId)
+    }, 3000);
+}
+
+function fadeIn(elemento, tempo){
+    processa(elemento, tempo, 0, 100);
+}
+
+function fadeOut(elemento, tempo){
+    processa(elemento, tempo, 100, 0);
+}
+
+function processa(elemento, tempo, inicio, fim){
+    let incremento;
+    if(inicio == 0){
+        incremento = 2;
+        elemento.style.display = "block";
+    } else {
+        incremento = -2;
+    }
+    opacidade = inicio;
+    let intervalo = setInterval(function(){
+        if(opacidade == fim) {
+            if(fim == 0) {
+                elemento.style.display = "none";
+            }
+            clearInterval(intervalo);
+        } else {
+            opacidade += incremento;
+            elemento.style.opacity = opacidade/100;
+            elemento.style.filter = "alpha(opacity='+opacidade+')";
+        }
+    }, tempo * 10);
 }
 
 const fragmentosDeTexto = [
