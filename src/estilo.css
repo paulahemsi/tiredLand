@@ -43,8 +43,8 @@ body {
 
 .btn {
     background-color: rgba(99, 99, 99, 0.007);
-    border: none;
-    padding: 0;
+    border: 1px solid whithe;
+    padding: 1rem;
     color: rgb(172, 172, 172);
     outline: none;
     /* font-family: condor-compressed, sans-serif; */
@@ -64,3 +64,10 @@ body {
     width: 100vw;
     height: 100vh;
 }
+
+/*quando algo não tiver conteúdo não mostra*/
+.classe-exemplo:empty {
+  display: none;
+}
+
+
