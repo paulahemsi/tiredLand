@@ -6,7 +6,7 @@
 }
 
 body {
-    padding: 5%;
+    padding: 0;
     margin: 0;
     /* margin-top: 5%; */
     display: flex;
@@ -37,26 +37,30 @@ body {
 .btn-grid {
     display: grid;
     grid-template-columns: repeat(1, auto);
-    gap: 10px;
-    margin-top: 3rem;
+    gap: 30px;
+    margin-top: 3rem;   
 }
 
 .btn {
-    background-color: rgba(99, 99, 99, 0.39);
+    background-color: rgba(99, 99, 99, 0.007);
     border: none;
-    border-radius: 5px;
     padding: 0;
-    color: whitesmoke;
+    color: rgb(172, 172, 172);
     outline: none;
     /* font-family: condor-compressed, sans-serif; */
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 3vw;
     margin-top: 1rem;
+    text-align: left;
 }
 
 .btn:hover {
-    background-color: whitesmoke;
-    border-color: whitesmoke;
-    color: black;
+    color: rgb(255, 255, 255);
     cursor: pointer;
+}
+
+.tela-cheia {
+    display: block;
+    width: 100vw;
+    height: 100vh;
 }

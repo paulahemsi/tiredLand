@@ -10,6 +10,10 @@
 
 //!ver se é possível acrescentar espaços, vídeos ou imagens ou p5 no meio
 
+//* espaços OK
+
+
+
 const containerElement = document.querySelector(".container");
 const textoElement = document.querySelector("#text");    
 const botoesElement = document.querySelector("#option-buttons");
@@ -57,7 +61,7 @@ function selecionouOpcao(opcao){
         const proximoFragmentoDeTextoId = opcao.proximoTexto;
         estado = Object.assign(estado, opcao.definirEstado);
         mostrarTexto(proximoFragmentoDeTextoId)
-    }, 3000);
+    }, 1000);
 }
 
 function fadeIn(elemento, tempo){
@@ -88,13 +92,13 @@ function processa(elemento, tempo, inicio, fim){
             elemento.style.opacity = opacidade/100;
             elemento.style.filter = "alpha(opacity='+opacidade+')";
         }
-    }, tempo * 10);
+    }, tempo * 5);
 }
 
 const fragmentosDeTexto = [
     {
         id: 1,
-        texto: 'Em uma das noites de sua fuga, ela estava seguindo pela praia, quando começou a ouvir uns rangidos bem alto e próximo a ela. Talvez o vento estivesse trazendo aquele som como uma pista a ser seguida? Um abrigo para mais uma noite sem rumo?',
+        texto: `Em uma das noites de sua fuga, ela estava seguindo pela praia, quando começou a ouvir uns rangidos bem alto e próximo a ela. Talvez o vento estivesse trazendo aquele som como uma pista a ser seguida? Um abrigo para mais uma noite sem rumo?`,
         opcoes: [
             {
                 texto: 'seguir os rangidos',
@@ -109,7 +113,7 @@ const fragmentosDeTexto = [
     },
     {
         id: 2,
-        texto: 'Ao seguir os sons de máquina quando sofre, ela se deparou com um lugar abandonado. Um parque de diversões antigo e desativado. Havia uma roda-gigante no centro, rangendo e movendo um pouco pra lá e pra cá de acordo com o vento. Nas ruas de acesso a ela, tinham barracas vazias, umas com brinquedos de pelúcia com a espuma exposta, sujos, tristes? Ainda assim, ela achou aquilo engraçado. Como pode ter encontrado um lugar desses?',
+        texto: `Ao seguir os sons de máquina quando sofre, ela se deparou com um lugar abandonado. Um parque de diversões antigo e desativado. Havia uma roda-gigante no centro, rangendo e movendo um pouco pra lá e pra cá de acordo com o vento. Nas ruas de acesso a ela, tinham barracas vazias, umas com brinquedos de pelúcia com a espuma exposta, sujos, tristes? Ainda assim, ela achou aquilo engraçado. Como pode ter encontrado um lugar desses?`,
         opcoes: [
             {
                 texto: 'dar alguns passos atrás e voltar para casa (e pegar uma pedra no chão, just in case...)',
@@ -138,7 +142,36 @@ const fragmentosDeTexto = [
     },
     {
         id: 3,
-        texto: 'Ao dar meia volta, você escuta um barulho de máquina ligando. Assustada, aguça seus sentidos para perceber de onde vem aquele barulho. “Será que tem alguém aqui?” ',
+        texto: `Ao dar meia volta, você escuta um barulho de máquina ligando. 
+        
+        
+        
+        
+        
+        trecctrectrectreeeec
+        
+
+
+
+
+        treeeeeeecct
+
+
+
+
+
+
+
+
+        
+        Assustada, aguça seus sentidos para perceber de onde vem aquele barulho. 
+        
+        
+        
+        
+        ...“Será que tem alguém aqui?” 
+        
+        `,
         opcoes: [
             {
                 texto:'Você para e apura os ouvidos',
@@ -156,7 +189,7 @@ const fragmentosDeTexto = [
     },
     {
         id: 4,
-        texto: 'Você descobre um hotel ”do horror”, ele tem camas, cozinha, alguns enlatados e água corrente. É possível ouvir o som do mar.',
+        texto: `Você descobre um hotel ”do horror”, ele tem camas, cozinha, alguns enlatados e água corrente. É possível ouvir o som do mar.`,
         opcoes: [
             {
                 texto:'Que agradável... você resolve passar alguns dias ali',
