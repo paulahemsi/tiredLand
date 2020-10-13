@@ -3,27 +3,31 @@
 }
 
 body {
-    padding: 0;
+    padding: 5%;
     margin: 0;
-    margin-top: 5%;
+    /* margin-top: 5%; */
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     width: 100vw;
     height: 100vh;
     color: whitesmoke;
-    background: #000000;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, #222222, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #000000;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #434343, #000000);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #222222, #000000);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     font-family: condor-compressed, sans-serif;
-    font-size: 4rem;
+    font-size: 7vw;
+    text-transform: uppercase;
 }
 
 .container {
-    width: 60%;
+    width: 70%;
     padding: 2rem;
-    /* border-radius: 5px;
-    box-shadow: 0 0 10px 2px; */
+    margin: 2rem;
+    align-self: flex-start;
 }
 
 .btn-grid {
@@ -41,7 +45,7 @@ body {
     color: whitesmoke;
     outline: none;
     font-family: condor-compressed, sans-serif;
-    font-size: 3rem;
+    font-size: 4vw;
     margin: 1rem;
 }
 
