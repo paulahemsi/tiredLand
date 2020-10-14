@@ -11,6 +11,7 @@
 //!ver se é possível acrescentar vídeos ou imagens ou p5 no meio
 
 const containerElement = document.querySelector('.container');
+const estadosElement = document.querySelector('.container-estados');
 const textoElement = document.querySelector('#text');
 const botoesElement = document.querySelector('#option-buttons');
 
@@ -26,7 +27,8 @@ function mostrarTexto(indexFragmentosDeTexto) {
   //O método find() retorna o valor do primeiro elemento do array que satisfizer a função de teste provida. Caso contrario, undefined é retornado.
   // const texto = fragmentosDeTexto.find(callback(element[, index[, array]])[, thisArg])
   window.scrollTo(0, 0);
-  fadeIn(containerElement, 2);
+  fadeIn(containerElement, 3);
+  fadeIn(estadosElement, 3);
   const texto = fragmentosDeTexto.find(
     (fragmentosDeTexto) => fragmentosDeTexto.id === indexFragmentosDeTexto
   );
@@ -53,7 +55,8 @@ function mostrarOpcao(opcao) {
 }
 
 function selecionouOpcao(opcao) {
-  fadeOut(containerElement, 2);
+  fadeOut(containerElement, 4);
+  fadeOut(estadosElement, 4);
   setTimeout(function () {
     const proximoFragmentoDeTextoId = opcao.proximoTexto;
     estado = Object.assign(estado, opcao.definirEstado);
@@ -100,46 +103,24 @@ const fragmentosDeTexto = [
       {
         texto: 'start',
         definirEstado: { medo: true },
-        proximoTexto: 2,
+        proximoTexto: '3a',
       },
     ],
   },
   {
-    id: 2,
-    texto: `LEAH
-
-    She's in her early twenties and is still positive about life. She's agile, energetic and tries to be a fair person. Her mind is super fast and great with connecting the dots, and she'll probably need to pause a few conversations to finish some thoughts. With some remarkable facts in her journey like a conservative upbringing, late sexual discovery and some professional failures, she feels good. But she can't fit in anywhere. And that's exhausting.
-    
-    
-    FRAN
-    
-    She feels on a road with a dead end. In her mid fifties, she has a family back home. She loves them a lot, but she's reached a point where her problems are not actually hers, and that's friggin' heavy. She's completely weary, but has a powerful life drive buried underneath it all. Too modest to say it, everything she decides to touch becomes beautiful and joyful. Her intuition works better than a satellite, so if she can hear it, she'd probably see her road is long and dynamic.
-    
-    
-    BARB
-    
-    Observant, she's got an organic horizontal leadership. She's resilient, witty and pragmatic, and got a taste for tattoos. One of her favorites is the " 100% " one, meaning: I've survived 100% of my worst days. Once she found real love, and that brought light to her journey, but her love is not among us anymore. So that's why you'll probably see her talking to emptiness from now and then. Some say she's a radical, but she prefers to describe herself as someone tired who just decided to retaliate.`,
-    opcoes: [
-      {
-        texto: 'FRAN',
-        proximoTexto: 3,
-      },
-    ],
-  },
-  {
-    id: 3,
+    id: '3a',
     texto: `I just wish I had a quiet and clean place to sit and put my feet up. But yeah... I guess even that it's too much to ask for now...
 
     ...I have no clue what time it is, and I still need to find a place to spend the night. I'm not sure if I should be in a hurry for that or if it just doesn't matter anymore...`,
     opcoes: [
       {
         texto: 'Keep walking',
-        proximoTexto: 4,
+        proximoTexto: '4b',
       },
     ],
   },
   {
-    id: 4,
+    id: '4b',
     texto: `...anyway, the sound of the waves calms me down a bit...
 
     (sigh)
