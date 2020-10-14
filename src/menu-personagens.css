@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Codystar&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  color: whitesmoke;
+  background: #000000;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #434343, #000000);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #222222, #000000);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ 
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.wrapper {
+  margin: 5%;
+}
+
+.titulo-container {
+  border: 2px dashed white;
+}
+
+.titulo {
+  font-size: 8vw;
+}
+
+
+.marquee {
+  height: 20vh;
+  overflow: hidden;
+  position: relative;
+  border: 0px dashed white;
+  margin-bottom: 3rem;
+}
+
+.marquee div {
+  display: block;
+  position: absolute;
+  overflow: hidden;
+  animation: marquee 10s linear infinite;
+  border: 0px dotted violet;
+}
+
+.marquee span {
+  /* float: left; */
+  width: 50%;
+  font-size: 16vh;
+  font-family: 'Codystar', cursive;
+}
+
+@keyframes marquee {
+  0% { left: 0; }
+  100% { left: -100%; }
+}
+
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: stretch;
+}
+
+.card {
+width: 33%;
+  border: 0px dashed yellow;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  border: 2px solid whitesmoke;
+  border-radius: 40px;
+}
+
+.card:hover{
+  background-color: rgba(255, 0, 255, 0.329);
+  cursor: pointer;
+}
+
+
+.nome {
+  font-size: 6vw;
+  font-family: condor-compressed, sans-serif;]
+  font-weight: lighter;
+  padding: 2rem;
+}
+
+.img {
+  margin: 2rem;
+}
+
+.caracteristicas {
+  font-family: condor-compressed, sans-serif;
+  font-size: 4vw;
+  font-weight: lighter;
+  height: 30%;
+}
+
+.resume {
+  padding: 2rem;
+}
