@@ -1,8 +1,4 @@
-//!opções que não tem o estado ficarem ali mas apagadinhas
-
 //!testar variáveis numéricas
-
-//!sair e voltar da página
 
 //!testar som
 
