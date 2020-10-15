@@ -1,12 +1,39 @@
+import { novoJogo } from './jogo.js';
+
 const containerElement = document.querySelector('.container');
 const wrapperElement = document.querySelector('.wrapper');
-containerElement.addEventListener('click', comecarJogo);
+const bodyElement = document.querySelector('body');
+let personagem;
+
+function popup(evento) {
+  if (
+    evento.path[0].classList.contains('c1') ||
+    evento.path[1].classList.contains('c1')
+  ) {
+    personagem = 'Leah';
+  } else if (
+    evento.path[0].classList.contains('c2') ||
+    evento.path[1].classList.contains('c2')
+  ) {
+    personagem = 'Fran';
+  } else if (
+    evento.path[0].classList.contains('c3') ||
+    evento.path[1].classList.contains('c3')
+  ) {
+    personagem = 'Barb  ';
+  }
+  if (window.confirm(`do you wanna be ${personagem}?`)) {
+    comecarJogo();
+  }
+}
 
 function comecarJogo() {
   fadeOut(wrapperElement, 3);
   setTimeout(function novaPagina() {
-    window.location.href = './index.html';
-  }, 2000);
+    bodyElement.removeChild(wrapperElement);
+    bodyElement.classList.remove('menu');
+    novoJogo();
+  }, 3000);
 }
 
 function fadeOut(elemento, tempo) {
@@ -21,7 +48,7 @@ function processa(elemento, tempo, inicio, fim) {
   } else {
     incremento = -2;
   }
-  opacidade = inicio;
+  let opacidade = inicio;
   let intervalo = setInterval(function () {
     if (opacidade == fim) {
       if (fim == 0) {
@@ -35,3 +62,5 @@ function processa(elemento, tempo, inicio, fim) {
     }
   }, tempo * 5);
 }
+
+containerElement.addEventListener('click', popup);
