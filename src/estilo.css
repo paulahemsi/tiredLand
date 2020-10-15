@@ -2,11 +2,11 @@
 
 *, *::before, *::after {
     box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
 .jogo {
-    padding: 0;
-    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,16 +17,19 @@
     background: -webkit-linear-gradient(to left, #434343, #000000);
     background: linear-gradient(to left, #222222, #000000);
     font-family: condor-compressed, sans-serif;
-    font-size: 4vw;
+    font-size: 3vw;
     overflow-x: hidden; 
+    border: 5px solid whitesmoke;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
 }
 
 
 .wrapper-jogo {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-end;
   align-items: stretch;
   border: 0px dashed gold;
+  width: inherit;
 }
 
 .container-estados {
@@ -52,12 +55,16 @@
 }
 
 .container-texto {
-    width: 60%;
+    flex-basis: 60%;
     height: 100vh;
     padding: 5rem;
     margin: 0;
     align-self: flex-end;
     border: 0px solid yellow;
+}
+
+.text {
+  height: 65%;
 }
 
 .btn-grid {
@@ -68,23 +75,27 @@
 }
 
 .btn {
-    background-color: rgba(255, 254, 254, 0.808);
+    background-color: rgba(65, 65, 65, 0);
     padding: 1rem;
-    border: none;
-    color: rgb(0, 0, 0);
+    border-top: 1px solid whitesmoke;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    color: rgb(255, 255, 255);
     outline: none;
     font-family: 'Rokkitt', serif;
-    font-size: 2.5vw;
+    font-size: 1.5vw;
     margin-top: 1rem;
-    text-align: center;
+    text-align: left;
+    /* align-self: flex-end; */
 }
 
 .btn:hover {
     color: rgb(255, 255, 255);
+    background-color: rgba(255, 0, 255, 0.329);
+    /* background-color: rgba(189, 189, 189, 0.295); */
     cursor: pointer;
 }
 
-.tela-cheia {
+.tela-cheia { 
     display: block;
     width: 100vw;
     height: 100vh;

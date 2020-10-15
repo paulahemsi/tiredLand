@@ -127,7 +127,6 @@ const fragmentosDeTexto = [
     id: 3,
     texto: `...if there's a day I could never imagine I'd live, this is definitely it...
 
-
     ...for how long have I been walking?...
     If my feet could answer that question they'd say "FOR TOO LOOOONG!"
     
@@ -244,8 +243,6 @@ const fragmentosDeTexto = [
 
     ...I just gotta stop it...I have nothing to do with all that...I just want to have a quiet life...
     
-    
-    
     ...oh, that's the sound of the waves! I'm close to the beach! Ohh, that could be nice... an old rag like me swimming in the dark naked!! hahahahaha...
     
     `,
@@ -259,13 +256,9 @@ const fragmentosDeTexto = [
   {
     id: 13,
     texto: `...I can hear this other noise though...could be the wind, but actually it's creepier than that...
-
     ...dear God...creepy noises and this old woman all alone in the dark...who am I?! Not even when I was 15 I did such a thing!
-    
     ...oh fuck it! 
-    
     ...!
-    
     Holy shit! I just used bad words!
     
     `,
@@ -311,8 +304,6 @@ const fragmentosDeTexto = [
     texto: `...time to find a place to spend the night...
 
     ...well, I'm not sure if I should be in a hurry for that or if it just doesn't matter anymore...
-    
-    
     `,
     opcoes: [
       {
@@ -328,8 +319,6 @@ const fragmentosDeTexto = [
     (sigh)
     
     ...I feel I'm close to these windy noises, maybe they're gonna offer me a shelter for now...
-    
-    
     `,
     opcoes: [
       {
@@ -341,7 +330,6 @@ const fragmentosDeTexto = [
   {
     id: 19,
     texto: `...dear God!... So that's it... That's the source of the noise?
-    
     `,
     opcoes: [
       {
@@ -447,25 +435,17 @@ const fragmentosDeTexto = [
   {
     id: 25,
     texto: `...oh my, this park must be big, I've been walking for a while...
-
-
     ...it's so dark in there, I'm not sure if there's a better way to get in other than that gate I saw...
     
-    
     ...oh wait, there's a sign there...
-    
     
     [ PRIVATE PROPERTY
     DON'T ENTER
     MAD DOG ]
-
+    
     //TODO +FEAR +CURIOSITY
-    
-    
-    ...wow...I did not see that coming...
-    
-    ...it could be true, but it also could be just a sign to scare away people like me...
-    
+   ...wow...I did not see that coming...
+  ...it could be true, but it also could be just a sign to scare away people like me...
     `,
     opcoes: [
       {
@@ -500,7 +480,6 @@ const fragmentosDeTexto = [
     ...but it's so dark in there... what the hell am I doing?
   
     //TODO [ [pass under the gates| frase seguinte na mesma tela, não leva a um novo lugar] ]
-    
     uh... I don't think I'd be able to pass underneath it, I wouldn't fit...
     
     `,
