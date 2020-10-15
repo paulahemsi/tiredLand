@@ -6,35 +6,24 @@
   margin: 0;
 }
 
-body {
+.menu {
   color: whitesmoke;
   background: #000000;
-  /* fallback for old browsers */
   background: -webkit-linear-gradient(to left, #434343, #000000);
-  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to left, #222222, #000000);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ 
   font-family: Arial, Helvetica, sans-serif;
+  width: 100vw;
+  height: 100vh;
 }
 
 .wrapper {
   margin: 5%;
 }
 
-.titulo-container {
-  border: 2px dashed white;
-}
-
-.titulo {
-  font-size: 8vw;
-}
-
-
 .marquee {
   height: 20vh;
   overflow: hidden;
   position: relative;
-  border: 0px dashed white;
   margin-bottom: 3rem;
 }
 
@@ -43,7 +32,6 @@ body {
   position: absolute;
   overflow: hidden;
   animation: marquee 10s linear infinite;
-  border: 0px dotted violet;
 }
 
 .marquee span {
@@ -69,10 +57,22 @@ width: 33%;
   border: 0px dashed yellow;
   display: flex;
   flex-flow: column nowrap;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   border: 2px solid whitesmoke;
   border-radius: 40px;
+}
+
+.c1{
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+}
+
+.c2{
+  border-radius: 245px 12px 225px 15px/15px 225px 15px 255px;
+}
+
+.c3{
+  border-radius: 215px 10px 205px 15px/15px 215px 15px 225px;
 }
 
 .card:hover{
@@ -83,13 +83,17 @@ width: 33%;
 
 .nome {
   font-size: 6vw;
-  font-family: condor-compressed, sans-serif;]
+  font-family: condor-compressed, sans-serif;
   font-weight: lighter;
   padding: 2rem;
+  display: block;
+  text-align: center;
+  width: 100%;
 }
 
 .img {
   margin: 2rem;
+  width: 100%;
 }
 
 .caracteristicas {
