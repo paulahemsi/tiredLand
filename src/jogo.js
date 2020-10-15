@@ -99,9 +99,7 @@ function processa(elemento, tempo, inicio, fim) {
 
   if (inicio == 0) {
     incremento = 2;
-    console.log('vou mudar pra block');
     elemento.style.display = 'block';
-    console.log('mudei!');
   } else {
     incremento = -2;
   }
@@ -111,7 +109,6 @@ function processa(elemento, tempo, inicio, fim) {
     if (opacidade == fim) {
       if (fim == 0) {
         elemento.style.display = 'none';
-        console.log('mudei para none muahahaha');
       }
       clearInterval(intervalo);
     } else {
