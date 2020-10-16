@@ -19,7 +19,8 @@
     font-family: condor-compressed, sans-serif;
     font-size: 3vw;
     overflow-x: hidden; 
-    border: 5px solid whitesmoke;
+    /* overflow-y: hidden;  */
+    border: 5px solid rgb(197, 197, 197);
     border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
 }
 
@@ -32,26 +33,36 @@
   width: inherit;
 }
 
-.container-estados {
+.container-esquerda {
   display: flex;
-  height: inherit;
-  width: 30%;
+  flex-basis: 40%;
   flex-flow: column nowrap;
   justify-content: space-evenly;
   align-items: center;
-  border-right: 1px solid white;
-  position: fixed; 
-  /* z-index: 1; */
-  top: 0; 
-  left: 0;
-  overflow-x: hidden; 
+  border: 0px dotted springgreen;
+}
+
+.row-estados {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border: 0px dashed blue;
 }
 
 .estados {
-  height: 33%;
-  padding: 2vw;
+  padding: 1vw;
   border: 0px dotted pink;
   font-size: 5vw;
+  color: rgba(255, 0, 255, 0.329);
+}
+
+.canvas {
+  margin: 5%;
+  width: 90%;
+  height: 75%;
+  border: 0px solid red;
+  /* background-color: rgba(255, 0, 255, 0.329); */
+
 }
 
 .container-texto {
@@ -60,6 +71,7 @@
     padding: 5rem;
     margin: 0;
     align-self: flex-end;
+    justify-content: center;
     border: 0px solid yellow;
 }
 
