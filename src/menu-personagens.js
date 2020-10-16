@@ -10,17 +10,17 @@ function popup(evento) {
     evento.path[0].classList.contains('c1') ||
     evento.path[1].classList.contains('c1')
   ) {
-    personagem = 'Leah';
+    personagem = 'Mali';
   } else if (
     evento.path[0].classList.contains('c2') ||
     evento.path[1].classList.contains('c2')
   ) {
-    personagem = 'Fran';
+    personagem = 'Rita';
   } else if (
     evento.path[0].classList.contains('c3') ||
     evento.path[1].classList.contains('c3')
   ) {
-    personagem = 'Barb  ';
+    personagem = 'Imani';
   }
   if (window.confirm(`do you wanna be ${personagem}?`)) {
     comecarJogo();
