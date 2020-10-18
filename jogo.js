@@ -1,4 +1,5 @@
 //DOM ELEMENTS
+let bodyElement;
 let containerTextoElement;
 let containerEsquerdaElement;
 let textoElement;
@@ -43,6 +44,7 @@ function estruturarElementos() {
   containerEsquerdaElement = document.querySelector('.container-esquerda');
   textoElement = document.querySelector('.text');
   botoesElement = document.querySelector('.option-buttons');
+  bodyElement = document.querySelector('.jogo');
   //ESTADOS
   tired = document.querySelector(".tired");
   fear = document.querySelector(".fear");
@@ -185,12 +187,19 @@ function aplicarEventos(index){
       break;
     case 98:
       tocar(trilhaFinal);
+      mudarCursor();
       toggleHide(tiroElement);
       break;
     case 99:
       toggleHide(tiroElement);
       break;
   }
+}
+
+function mudarCursor(){
+  bodyElement.addEventListener('mouseover',() => {
+    bodyElement.style.cursor = 'crosshair';
+  });
 }
 
 function mostrarOpcao(opcao) {
