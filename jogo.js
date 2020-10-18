@@ -715,11 +715,6 @@ const fragmentosDeTexto = [
         texto: 'go back to the main gate',
         proximoTexto: 26,
       },
-      {
-        texto: `pass under the gates`,
-        //! VER TODO ACIMA
-        proximoTexto: '25b',
-      },
     ],
   },
   {
@@ -1363,13 +1358,7 @@ const fragmentosDeTexto = [
   },
   { 
     id: 65,
-    texto: `----thinking if she can jump or if there's another way----
-
-    ----sound again, a laughter?-----
-    ----new sound together - target raising and moving-----
-    
-    
-    ...I can't jump over the counter...not gonna happen...what if I trip and break a leg here...oh my---my stomach just churned---what is this noise?
+    texto: `...I can't jump over the counter...not gonna happen...what if I trip and break a leg here...oh my---my stomach just churned---what is this noise?
     
     `,
     opcoes: [
