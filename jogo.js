@@ -74,7 +74,7 @@ function estruturarElementos() {
 function novoJogo() {
   estado = {};
   estruturarElementos();
-  mostrarTexto(3);
+  mostrarTexto(98);
 }
 
 function mostrarTexto(indexFragmentosDeTexto) {
@@ -312,8 +312,6 @@ const fragmentosDeTexto = [
 
 
     ...where am I going?!
-
-
 
 
     `,
@@ -592,11 +590,9 @@ const fragmentosDeTexto = [
   {
     id: 20,
     texto: `A ferris wheel!
-
     If there's one thing I didn't expect to see on such terrible day is a ferris wheel.
     
     (smiles briefly)
-  
     ...in an amusement park...   
     ...how ironic.
     `,

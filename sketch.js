@@ -11,6 +11,7 @@ var eixoAlto;
 var pontos = 0;
 var miraCursor;
 var miraCursor2;
+var final = false;
 
 p.preload = function() {
     miraCursor = p.loadImage("./mira.png");
@@ -39,7 +40,9 @@ function criarEixos() {
 }
 
 p.draw = function() {
-    p.background(220);
+    if (!final) {
+        p.background(0);
+    }
     criarEixos();
     for (let i = 0; i < inimigos.length; i++) {
         inimigos[i].mostrar();
@@ -48,9 +51,14 @@ p.draw = function() {
             destruirInimigo(i);
         }
     }
-
+    
     acrescentarInimigos();
+    
     mira();
+
+    if (inimigos.length > 15) {
+        final = true;
+    }
 }
 
 function mira() {
@@ -65,14 +73,16 @@ function mira() {
 }
 
 function acrescentarInimigos() {
-    for (let i = 0; i < inimigos.length; i++) {
-        if (inimigos[i].x == p.width / 1.5) {
-            if (inimigos[i].eixo === eixoBaixo) {
-                novoInimigo(eixoBaixo);
-            } else if (inimigos[i].eixo === eixoMedio) {
-                novoInimigo(eixoMedio);
-            } else if (inimigos[i].eixo === eixoAlto) {
-                novoInimigo(eixoAlto);
+    if (!final) {
+        for (let i = 0; i < inimigos.length; i++) {
+            if (inimigos[i].x == p.width / 1.5) {
+                if (inimigos[i].eixo === eixoBaixo) {
+                    novoInimigo(eixoBaixo);
+                } else if (inimigos[i].eixo === eixoMedio) {
+                    novoInimigo(eixoMedio);
+                } else if (inimigos[i].eixo === eixoAlto) {
+                    novoInimigo(eixoAlto);
+                }
             }
         }
     }
@@ -110,6 +120,7 @@ class Inimigo {
     }
 
     mostrar() {
+        p.stroke(220);
         p.rectMode(p.CENTER);
         p.noFill();
         p.rect(this.x, this.y, larguraInimigos, alturaInimigos);
@@ -199,7 +210,7 @@ p.draw = function() {
     p.clear();
     vetor.x = 300;
   }
-  if (vetor.y > p.width || vetor.y < 0) {
+  if (vetor.y > p.height || vetor.y < 0) {
     p.clear();
     vetor.y = 300;
   }
