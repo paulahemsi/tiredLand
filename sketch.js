@@ -169,3 +169,77 @@ p.setup = function() {
 }
 
 var myp5 = new p5(flashing, "flashing");
+
+var walker = function (p) {
+let vetor;
+let anterior;
+
+p.setup = function() {
+  var canvas = p.createCanvas(600, 600);
+  p.background(20, 0, 0, 0);
+  vetor = p.createVector(200, 200);
+  anterior = vetor.copy();
+  p.noLoop();
+}
+
+p.draw = function() {
+  p.stroke(220);
+  p.line(vetor.x, vetor.y, anterior.x, anterior.y);
+  anterior.set(vetor);
+  let passo = p5.Vector.random2D();
+  let porcentagem = p.random(100);
+  if (porcentagem > 95){
+  passo.mult(p.random(10,30));
+  } else {
+    passo.setMag(p.random(3));
+  }
+  
+  vetor.add(passo);
+  
+}
+
+p.mousePressed = function(){
+    p.loop();
+}
+
+}
+
+var myp5 = new p5(walker, "walker");
+
+var entrada = function(p) {
+x = 10;
+y = 5;
+let xoff = 0;
+
+p.setup = function() {
+  p.createCanvas(600, 600);
+  p.noStroke();
+  p.background(0, 0, 0, 0);
+  p.noLoop();
+}
+
+p.draw = function() {
+  xoff = xoff + 0.3;
+  let n = p.noise(xoff) * 10;
+
+  p.fill(220);
+  p.ellipse(x + n, y + n, 100 / y * 2, 10 - y);
+  y = y + (n * 5);
+
+  if (y > p.height) {
+    y = 10;
+    x = x + (n * 2);
+  }
+
+  if (x > p.width - 100) {
+    p.noLoop()
+  }
+  
+}
+
+  p.mousePressed = function() {
+    p.loop();
+}
+}
+
+var myp5 = new p5(entrada, "entrada");

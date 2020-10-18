@@ -10,7 +10,15 @@ let mar;
 let barulho;
 let tiroElement;
 let flashingElement;
+let walkerElement;
+let entradaElement;
 let rodaGiganteElement;
+let hotelElement;
+let ervasElement;
+let maresiaElement;
+let ruaElement;
+let letreiroEntradaElement;
+let letreiroHotelElement;
 let estadosElement = [];
 let estado = {};
 
@@ -29,7 +37,15 @@ function estruturarElementos() {
   gun = document.querySelector(".gun");
   tiroElement = document.querySelector("#tiro");
   flashingElement = document.querySelector("#flashing");
+  walkerElement = document.querySelector("#walker");
+  entradaElement = document.querySelector('#entrada');
   rodaGiganteElement = document.querySelector(".roda-gigante");
+  hotelElement = document.querySelector('.hotel');
+  ervasElement = document.querySelector('.ervas');
+  maresiaElement = document.querySelector('.maresia');
+  ruaElement = document.querySelector('.rua');
+  letreiroEntradaElement = document.querySelector('.letreiro-entrada');
+  letreiroHotelElement = document.querySelector('.letreiro-hotel');
   mar = document.querySelector(".mar");
   barulho = document.querySelector(".barulho");
 }
@@ -70,14 +86,55 @@ function mostrarTexto(indexFragmentosDeTexto) {
 
 function aplicarEventos(index){
   switch (index) {
-    case 38:
+    case 4:
+      toggleHide(walkerElement);
+      break;
+    case 6:
+      toggleHide(walkerElement);
+      break;
+    case 9:
+      tocar(mar);
+      toggleHide(maresiaElement);
+      break;
+    case 13:
+      toggleHide(maresiaElement);
+      break;
+    case 20:
+      toggleHide(entradaElement);
+      break;
+    case 23:
+      toggleHide(entradaElement);
+      break;
+    case 24:
+      toggleHide(letreiroEntradaElement);
+      break;
+    case 26:
+      toggleHide(letreiroEntradaElement);
+      break;   
+    case 32:
       toggleHide(rodaGiganteElement);
       break;
     case 46:
       toggleHide(rodaGiganteElement);
+      toggleHide(ervasElement);
       break;
-    case 11:
-      tocar(mar);
+    case 48:
+      toggleHide(ervasElement);
+      toggleHide(hotelElement);
+      break;
+    case '48b':
+      toggleHide(hotelElement);
+      toggleHide(ruaElement);
+      break;
+    case '49c':
+      toggleHide(ruaElement);
+      break;
+    case 49:
+      toggleHide(hotelElement);
+      toggleHide(letreiroHotelElement);
+      break;
+    case 50:
+      toggleHide(letreiroHotelElement);
       break;
     case 56:
       tocar(barulho);
@@ -88,7 +145,7 @@ function aplicarEventos(index){
     case 66:
       toggleHide(flashingElement);
       break;
-    case 97:
+    case 98:
       toggleHide(tiroElement);
       break;
     case 99:
@@ -646,7 +703,7 @@ const fragmentosDeTexto = [
     id: 28,
     //TODO - FEAR
     texto: `
-    ...it's all dark and abandoned, maybe there could be people inside, mad at me for invading their spot...maybe it's that kind of place where people get murdered...maybe men hide there to awaken their shadows...
+    ...it's all dark and abandoned, maybe there could be people inside... maybe it's that kind of place where people get murdered...maybe men hide there to awaken their shadows...
 
     ...but somehow this is not what I feel deep deep down... I'm not the bravest person when it comes to invading an abandoned amusement park in the middle of the night... and here I am.
     
@@ -1683,6 +1740,7 @@ const fragmentosDeTexto = [
     don't worry, it's just a game.`,
     opcoes: [
       {
+        //!piscar essa frase e apagar tudo
         texto: `Restart`,
         proximoTexto: 3,
       },
