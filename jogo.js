@@ -76,7 +76,7 @@ function estruturarElementos() {
 function novoJogo() {
   estado = {};
   estruturarElementos();
-  mostrarTexto(98);
+  mostrarTexto(3);
 }
 
 function mostrarTexto(indexFragmentosDeTexto) {

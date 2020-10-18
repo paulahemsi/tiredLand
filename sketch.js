@@ -56,7 +56,7 @@ p.draw = function() {
     
     mira();
 
-    if (inimigos.length > 500) {
+    if (inimigos.length > 750) {
         final = true;
     }
 }
