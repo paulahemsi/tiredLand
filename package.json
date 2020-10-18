@@ -1,36 +1,12 @@
 {
-  "name": "tiredLand",
+  "name": "tireland_v3",
   "version": "1.0.0",
-  "description": "ou",
-  "main": "jogo.js",
+  "description": "cyoa game",
+  "main": "p5.min.js",
   "scripts": {
-    "dev": "parcel src/index.html",
-    "format": "prettier --ignore-path ./.gitignore --write \"./**/*.{html,json,js,ts,css}\"",
-    "format:check": "prettier --ignore-path ./.gitignore --check \"./**/*.{html,json,js,ts,css}\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/paulahemsi/tiredLand.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/paulahemsi/tiredLand/issues"
-  },
-  "homepage": "https://github.com/paulahemsi/tiredLand#readme",
-  "devDependencies": {
-    "eslint": "^7.11.0",
-    "eslint-config-prettier": "^6.12.0",
-    "eslint-plugin-import": "^2.22.1",
-    "parcel-bundler": "^1.12.4",
-    "prettier": "^2.1.2"
-  },
-  "browserslist": [
-    "last 2 Chrome versions"
-  ],
-  "dependencies": {
-    "p5-manager": "^0.4.3"
-  }
+  "author": "lazyBees",
+  "license": "ISC"
 }

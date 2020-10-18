@@ -1,37 +1,14 @@
 import { novoJogo } from './jogo.js';
 
-const containerElement = document.querySelector('.container');
-const wrapperElement = document.querySelector('.wrapper');
+const containerElement = document.querySelector('.c2');
 const bodyElement = document.querySelector('body');
+const menuElement = document.querySelector('.menu');
 let personagem;
 
-function popup(evento) {
-  if (
-    evento.path[0].classList.contains('c1') ||
-    evento.path[1].classList.contains('c1')
-  ) {
-    personagem = 'Mali';
-  } else if (
-    evento.path[0].classList.contains('c2') ||
-    evento.path[1].classList.contains('c2')
-  ) {
-    personagem = 'Rita';
-  } else if (
-    evento.path[0].classList.contains('c3') ||
-    evento.path[1].classList.contains('c3')
-  ) {
-    personagem = 'Imani';
-  }
-  if (window.confirm(`do you wanna be ${personagem}?`)) {
-    comecarJogo();
-  }
-}
-
 function comecarJogo() {
-  fadeOut(wrapperElement, 3);
+  fadeOut(menuElement, 3);
   setTimeout(function novaPagina() {
-    bodyElement.removeChild(wrapperElement);
-    bodyElement.classList.remove('menu');
+    bodyElement.removeChild(menuElement);
     novoJogo();
   }, 3000);
 }
@@ -63,4 +40,4 @@ function processa(elemento, tempo, inicio, fim) {
   }, tempo * 5);
 }
 
-containerElement.addEventListener('click', popup);
+containerElement.addEventListener('click', comecarJogo);

@@ -6,6 +6,15 @@
   margin: 0;
 }
 
+body {
+  width: 100vw;
+  height: 100vh;
+  background: #000000;
+  background: -webkit-linear-gradient(to left, #434343, #000000);
+  background: linear-gradient(to left, #222222, #000000);
+  overflow-x: hidden;
+}
+
 .menu {
   color: whitesmoke;
   background: #000000;
@@ -25,6 +34,7 @@
   overflow: hidden;
   position: relative;
   margin-bottom: 3rem;
+  margin-top: 1rem;
 }
 
 .marquee div {
@@ -75,7 +85,7 @@ width: 33%;
   border-radius: 215px 10px 205px 15px/15px 215px 15px 225px;
 }
 
-.card:hover{
+.c2:hover{
   background-color: rgba(255, 0, 255, 0.329);
   cursor: pointer;
 }

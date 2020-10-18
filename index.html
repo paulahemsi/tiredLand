@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script language="javascript" type="text/javascript" src="./p5.min.js"></script>
+    <!-- uncomment lines below to include extra p5 libraries -->
+    <!-- 	<script language="javascript" src="libraries/p5.dom.js"></script> -->
+    <!--<script language="javascript" src="libraries/p5.sound.js"></script>-->
+    <script language="javascript" type="text/javascript" src="sketch.js"></script>
+
+
+
+    <title>TiredLand</title>
+    <link rel="stylesheet" href="./menu-personagens.css">
+    <link rel="stylesheet" href="./estilo.css">
+    <!--fonte condor-compressed-->
+    <link rel="stylesheet" href="https://use.typekit.net/yxd7izj.css" />
+</head>
+
+<body>
+
+    <!--MENU-->
+
+    <div class="menu">
+        <div class="wrapper">
+            <div class="marquee">
+                <div>
+                    <span> who do you wanna be </span>
+                    <span> who do you wanna be </span>
+                </div>
+            </div>
+            <div class="container">
+
+                <div class="card c1" title="Sara's too tired to play today">
+                    <h2 class="nome">SARA</h2>
+
+                    <img class="img" src="./assets/silhueta2.png" alt="character silhoette">
+
+                    <h3 class="caracteristicas">Witty | Energetic | Fair-minded</h3>
+                    <p class="resume">
+                        In her early twenties and still positive about life. Her mind is
+                        super fast and great with connecting the dots, and she'll probably need to pause a few
+                        conversations to
+                        finish
+                        some thoughts. With some remarkable facts in her journey like a conservative upbringing, late
+                        sexual
+                        discovery
+                        and some professional failures, she feels good. But she can't fit in anywhere. And that's
+                        exhausting.
+                    </p>
+                </div>
+                <div class="card c2">
+                    <h2 class="nome">RITA</h2>
+
+                    <img class="img" src="./assets/silhueta.png" alt="character silhoette">
+
+                    <h3 class="caracteristicas">Intuitive | Resilient | Generous</h3>
+                    <p class="resume">
+                        She feels on a road with a dead end. In her mid fifties, she has a family back home. She loves
+                        them
+                        a lot,
+                        but
+                        she's reached a point where her problems are not actually hers, and that's friggin' heavy. Too
+                        modest to say it, everything
+                        she
+                        decides
+                        to
+                        touch becomes beautiful and joyful. Her intuition works better than a satellite, so if she can
+                        hear
+                        it,
+                        she'd
+                        probably see her road is long and dynamic.
+                    </p>
+                </div>
+                <div class="card c3" title="Imani's too tired to play today">
+                    <h2 class="nome">IMANI</h2>
+                    <img class="img" src="./assets/silhueta3.png" alt="character silhoette">
+
+                    <h3 class="caracteristicas">Perceptive | Confident | Loyal</h3>
+                    <p class="resume">
+                        She's got a taste
+                        for
+                        tattoos. One of her favorites is the "100%" one, meaning: I've survived 100% of my worst days.
+                        Once she
+                        found
+                        real love, and that brought light to her journey, but her love is not among us anymore. So
+                        that's
+                        why you'll
+                        probably see her talking to emptiness from now and then. Some say she's a radical, but she
+                        prefers
+                        to
+                        describe
+                        herself as someone tired who just decided to retaliate.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--JOGO-->
+
+    <div class="jogo hide">
+        <div class="wrapper-jogo">
+            <div class="container-esquerda" style="display: block; opacity: 1;">
+                <div class="row-estados">
+                    <p class="estados tired">+tired</p>
+                    <p class="estados fear">+fear</p>
+                    <p class="estados excited">+excited</p>
+                    <p class="estados gun">+gun</p>
+                </div>
+                <div class="canvas">
+                    <div class="hide" id="tiro"> </div>
+                    <div class="hide" id="flashing"> </div>
+                    <img src="./assets/roda-gigante.png" alt="" class="roda-gigante hide">
+                </div>
+            </div>
+            <div class="container-texto" style="display: block; opacity: 1;">
+                <div class="text">
+                </div>
+                <div class="option-buttons btn-grid"><button class="btn"></button><button class="btn"></button></div>
+            </div>
+        </div>
+    </div>
+    <audio class="mar" src="./assets/mar.ogg"></audio>
+    <audio class="barulho" src="./assets/rodagigante.mp3"></audio>
+
+    <!-- <script src="./p5.min.js"></script> -->
+    <!-- <script src="./tiro.js"></script> -->
+    <!-- <script src="./flashing.js"></script> -->
+    <script type="module" src="./menu-personagens.js"></script>
+</body>
+
+</html>
