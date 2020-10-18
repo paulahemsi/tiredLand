@@ -41,7 +41,7 @@ function criarEixos() {
 
 p.draw = function() {
     if (!final) {
-        p.background(0);
+        p.background(20);
     }
     criarEixos();
     for (let i = 0; i < inimigos.length; i++) {
@@ -56,7 +56,7 @@ p.draw = function() {
     
     mira();
 
-    if (inimigos.length > 15) {
+    if (inimigos.length > 500) {
         final = true;
     }
 }
