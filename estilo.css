@@ -136,6 +136,6 @@ body {
 }
 
 img {
-  width: inherit;
+  max-width: 700px;
   height: inherit;
 }
