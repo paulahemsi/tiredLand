@@ -74,7 +74,7 @@ function estruturarElementos() {
 function novoJogo() {
   estado = {};
   estruturarElementos();
-  mostrarTexto(3);
+  mostrarTexto(98);
 }
 
 function mostrarTexto(indexFragmentosDeTexto) {
@@ -216,6 +216,9 @@ function desativarEstado(element){
 function selecionouOpcao(opcao) {
   fadeOut(containerTextoElement, 2);
   fadeOut(containerEsquerdaElement, 2);
+      if (opcao.proximoTexto == 'fim'){
+        return;
+      }
   setTimeout(function () {
     const proximoFragmentoDeTextoId = opcao.proximoTexto;
     estado = Object.assign(estado, opcao.definirEstado);
@@ -1849,8 +1852,8 @@ const fragmentosDeTexto = [
     opcoes: [
       {
         //!piscar essa frase e apagar tudo
-        texto: `Restart`,
-        proximoTexto: 3,
+        texto: `The End`,
+        proximoTexto: 'fim',
       },
     ],
   },
