@@ -8,6 +8,11 @@ let excited;
 let gun;
 let mar;
 let barulho;
+let trilha3;
+let trilha9;
+let trilha72;
+let trilha75;
+let trilhaFinal;
 let tiroElement;
 let flashingElement;
 let walkerElement;
@@ -48,6 +53,11 @@ function estruturarElementos() {
   letreiroHotelElement = document.querySelector('.letreiro-hotel');
   mar = document.querySelector(".mar");
   barulho = document.querySelector(".barulho");
+  trilha3 = document.querySelector(".cena1");
+  trilha9 = document.querySelector(".cena9");
+  trilha72 = document.querySelector(".cena72");
+  trilha75 = document.querySelector(".cena75");
+  trilhaFinal = document.querySelector(".cena-final");
 }
 
 function novoJogo() {
@@ -86,6 +96,9 @@ function mostrarTexto(indexFragmentosDeTexto) {
 
 function aplicarEventos(index){
   switch (index) {
+    case 3:
+      tocar(trilha3);
+      break;
     case 4:
       toggleHide(walkerElement);
       break;
@@ -93,6 +106,7 @@ function aplicarEventos(index){
       toggleHide(walkerElement);
       break;
     case 9:
+      tocar(trilha9);
       tocar(mar);
       toggleHide(maresiaElement);
       break;
@@ -145,6 +159,10 @@ function aplicarEventos(index){
     case 66:
       toggleHide(flashingElement);
       break;
+    case 72:
+      tocar(trilha72);
+    case 75:
+      tocar(trilha75);
     case 98:
       toggleHide(tiroElement);
       break;
