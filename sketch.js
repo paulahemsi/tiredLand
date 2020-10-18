@@ -176,7 +176,6 @@ let anterior;
 
 p.setup = function() {
   var canvas = p.createCanvas(600, 600);
-  p.background(20, 0, 0, 0);
   vetor = p.createVector(200, 200);
   anterior = vetor.copy();
   p.noLoop();
@@ -188,13 +187,22 @@ p.draw = function() {
   anterior.set(vetor);
   let passo = p5.Vector.random2D();
   let porcentagem = p.random(100);
-  if (porcentagem > 95){
+  if (porcentagem > 98){
   passo.mult(p.random(10,30));
   } else {
     passo.setMag(p.random(3));
   }
   
   vetor.add(passo);
+
+  if (vetor.x > p.width || vetor.x < 0) {
+    p.clear();
+    vetor.x = 300;
+  }
+  if (vetor.y > p.width || vetor.y < 0) {
+    p.clear();
+    vetor.y = 300;
+  }
   
 }
 
@@ -214,7 +222,6 @@ let xoff = 0;
 p.setup = function() {
   p.createCanvas(600, 600);
   p.noStroke();
-  p.background(0, 0, 0, 0);
   p.noLoop();
 }
 
@@ -232,7 +239,8 @@ p.draw = function() {
   }
 
   if (x > p.width - 100) {
-    p.noLoop()
+    p.clear();
+    x = 10;
   }
   
 }

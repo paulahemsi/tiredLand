@@ -1,22 +1,27 @@
+//DOM ELEMENTS
 let containerTextoElement;
 let containerEsquerdaElement;
 let textoElement;
 let botoesElement;
+//ESTADOS
 let tired;
 let fear;
 let excited;
 let gun;
+//TRILHAS
 let mar;
 let barulho;
 let trilha3;
-let trilha9;
+let trilha51;
 let trilha72;
 let trilha75;
 let trilhaFinal;
+//SKETCHS
 let tiroElement;
 let flashingElement;
 let walkerElement;
 let entradaElement;
+//IMAGENS
 let rodaGiganteElement;
 let hotelElement;
 let ervasElement;
@@ -24,6 +29,7 @@ let maresiaElement;
 let ruaElement;
 let letreiroEntradaElement;
 let letreiroHotelElement;
+
 let estadosElement = [];
 let estado = {};
 
@@ -32,18 +38,22 @@ let jogoElement = document.querySelector('.jogo');
 
 function estruturarElementos() {
   jogoElement.classList.toggle('hide');
+  //DOM ELEMENTS
   containerTextoElement = document.querySelector('.container-texto');
   containerEsquerdaElement = document.querySelector('.container-esquerda');
   textoElement = document.querySelector('.text');
   botoesElement = document.querySelector('.option-buttons');
+  //ESTADOS
   tired = document.querySelector(".tired");
   fear = document.querySelector(".fear");
   excited = document.querySelector(".excited");
   gun = document.querySelector(".gun");
+  //SKETCHS
   tiroElement = document.querySelector("#tiro");
   flashingElement = document.querySelector("#flashing");
   walkerElement = document.querySelector("#walker");
   entradaElement = document.querySelector('#entrada');
+  //IMAGENS
   rodaGiganteElement = document.querySelector(".roda-gigante");
   hotelElement = document.querySelector('.hotel');
   ervasElement = document.querySelector('.ervas');
@@ -51,10 +61,11 @@ function estruturarElementos() {
   ruaElement = document.querySelector('.rua');
   letreiroEntradaElement = document.querySelector('.letreiro-entrada');
   letreiroHotelElement = document.querySelector('.letreiro-hotel');
+  //TRILHAS
   mar = document.querySelector(".mar");
   barulho = document.querySelector(".barulho");
   trilha3 = document.querySelector(".cena1");
-  trilha9 = document.querySelector(".cena9");
+  trilha51 = document.querySelector(".cena51");
   trilha72 = document.querySelector(".cena72");
   trilha75 = document.querySelector(".cena75");
   trilhaFinal = document.querySelector(".cena-final");
@@ -102,34 +113,35 @@ function aplicarEventos(index){
     case 4:
       toggleHide(walkerElement);
       break;
-    case 6:
-      toggleHide(walkerElement);
-      break;
     case 9:
-      tocar(trilha9);
       tocar(mar);
-      toggleHide(maresiaElement);
       break;
     case 13:
+      toggleHide(walkerElement);
+      break;
+    case 16:
       toggleHide(maresiaElement);
       break;
-    case 20:
-      toggleHide(entradaElement);
+    case '16c':
+      toggleHide(maresiaElement);
+      break;
+    case 19:
+      toggleHide(rodaGiganteElement);
       break;
     case 23:
-      toggleHide(entradaElement);
+      toggleHide(rodaGiganteElement);
       break;
     case 24:
       toggleHide(letreiroEntradaElement);
       break;
     case 26:
       toggleHide(letreiroEntradaElement);
+      toggleHide(entradaElement);
       break;   
     case 32:
-      toggleHide(rodaGiganteElement);
+      toggleHide(entradaElement);
       break;
     case 46:
-      toggleHide(rodaGiganteElement);
       toggleHide(ervasElement);
       break;
     case 48:
@@ -150,6 +162,12 @@ function aplicarEventos(index){
     case 50:
       toggleHide(letreiroHotelElement);
       break;
+    case 51:
+      tocar(trilha51);
+      break;
+    case '49e':
+      tocar(trilha51);
+      break;
     case 56:
       tocar(barulho);
       break;
@@ -159,11 +177,14 @@ function aplicarEventos(index){
     case 66:
       toggleHide(flashingElement);
       break;
-    case 72:
+    case 71:
       tocar(trilha72);
+      break;
     case 75:
       tocar(trilha75);
+      break;
     case 98:
+      tocar(trilhaFinal);
       toggleHide(tiroElement);
       break;
     case 99:
@@ -204,22 +225,6 @@ function tocar(musica) {
 function parar(musica){
   musica.pause();
 }
-
-// function mostrarEstados() {
-
-// //! NÃO ESTÁ FEITO, FAZER
-// //! DAR TOOGLE NOS ELEMENTOS HTML 
-// //! PENSAR COMO FAZER ISSO NAS OPÇÕES (talvez com boolanos mesmo de cada propriedade, já que são poucas? e aí na opção teria uma função para deixar true ou false?)
-
-//   if (estado.tired) {
-//     tired.classList.toggle('.hide');
-//   }
-
-//   let estados = Object.keys(estado);
-//   for (let i = 0; i < estados.length; i++) {
-//     estadosElement[i].textContent = `+ ${estados[i]}`;
-//   }
-// }
 
 function fadeIn(elemento, tempo) {
   processa(elemento, tempo, 0, 100);
@@ -724,8 +729,6 @@ const fragmentosDeTexto = [
     ...it's all dark and abandoned, maybe there could be people inside... maybe it's that kind of place where people get murdered...maybe men hide there to awaken their shadows...
 
     ...but somehow this is not what I feel deep deep down... I'm not the bravest person when it comes to invading an abandoned amusement park in the middle of the night... and here I am.
-    
-    ...dear God...I don't know...how did I end up here?
 `,
     opcoes: [
       {
