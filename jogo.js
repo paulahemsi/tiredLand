@@ -201,8 +201,16 @@ function toggleHide(element){
   element.classList.toggle('hide');
 }
 
-function toggleAtivo(element){
-  element.classList.toggle('ativo');
+function ativarEstado(element){
+  if (!element.classList.contains('ativo')){
+    element.classList.toggle('ativo');
+}
+}
+
+function desativarEstado(element){
+  if (element.classList.contains('ativo')){
+    element.classList.toggle('ativo');
+}
 }
 
 function selecionouOpcao(opcao) {
@@ -212,8 +220,11 @@ function selecionouOpcao(opcao) {
     const proximoFragmentoDeTextoId = opcao.proximoTexto;
     estado = Object.assign(estado, opcao.definirEstado);
     mostrarTexto(proximoFragmentoDeTextoId);
-    if (opcao.toggleEstado != undefined){
-      opcao.toggleEstado();
+    if (opcao.ativar != undefined){
+      opcao.ativar();
+    };
+    if (opcao.desativar != undefined){
+      opcao.desativar();
     };
   }, 2000);
 }
@@ -272,6 +283,9 @@ const fragmentosDeTexto = [
     opcoes: [
       {
         texto: 'keep walking',
+        ativar: function(){
+          ativarEstado(tired);
+        },
         proximoTexto: 4,
       },
     ],
@@ -284,10 +298,6 @@ const fragmentosDeTexto = [
     opcoes: [
       {
         texto: 'keep walking',
-        // definirEstado: { tired: true },
-        toggleEstado: function(){
-          toggleAtivo(tired);
-        },
         proximoTexto: 5,
       },
     ],
@@ -320,6 +330,9 @@ const fragmentosDeTexto = [
     opcoes: [
       {
         texto: 'stop for a while',
+        desativar: function(){
+          desativarEstado(tired);
+        },
         proximoTexto: 8,
       },
       {
@@ -417,6 +430,9 @@ const fragmentosDeTexto = [
     opcoes: [
       {
         texto: `...don't even dare the thought...`,
+        ativar: function(){
+          ativarEstado(fear);
+        },
         proximoTexto: 13,
       },
     ],
@@ -462,6 +478,12 @@ const fragmentosDeTexto = [
       },
       {
         texto: `could be nice to check the sea.`,
+        desativar: function(){
+          desativarEstado(tired);
+        },
+        ativar: function(){
+          ativarEstado(excited);
+        },
         proximoTexto: 16,
       },
     ],
@@ -532,6 +554,9 @@ const fragmentosDeTexto = [
     opcoes: [
       {
         texto: 'keep walking towards the noises',
+        ativar: function(){
+          ativarEstado(excited);
+        },
         proximoTexto: 18,
       },
     ],
@@ -574,9 +599,10 @@ const fragmentosDeTexto = [
     `,
     opcoes: [
       {
-        //TODO +TIRED 
         texto: 'find the entrance to the park',
-        definirEstado: { tired: true },
+        ativar: function(){
+          ativarEstado(tired);
+        },
         proximoTexto: 21,
       },
       {
@@ -643,6 +669,9 @@ const fragmentosDeTexto = [
     opcoes: [
       {
         texto: 'check the gate and see if it opens',
+        desativar: function(){
+          desativarEstado(excited);
+        },
         proximoTexto: 26,
       },
       {
@@ -663,6 +692,9 @@ const fragmentosDeTexto = [
     opcoes: [
       {
         texto: 'go back to the gate and see if it opens',
+        desativar: function(){
+          desativarEstado(excited);
+        },
         proximoTexto: 26,
       },
       {
@@ -748,6 +780,9 @@ const fragmentosDeTexto = [
     opcoes: [
       {
         texto: 'try to find something to cut the chain',
+        ativar: function(){
+          ativarEstado(tired);
+        },
         proximoTexto: 31,
       },
       {
@@ -778,6 +813,9 @@ const fragmentosDeTexto = [
     opcoes: [
       {
         texto: 'open the door',
+        ativar: function(){
+          ativarEstado(excited);
+        },
         proximoTexto: 33,
       },
     ],
@@ -815,6 +853,9 @@ const fragmentosDeTexto = [
       },
       {
         texto: `take a walk around`,
+        desativar: function(){
+          desativarEstado(fear);
+        },
         proximoTexto: 39,
       },
     ],
@@ -843,6 +884,9 @@ const fragmentosDeTexto = [
     opcoes: [
       {
         texto: 'take a walk in the park',
+        desativar: function(){
+          desativarEstado(fear);
+        },
         proximoTexto: 39,
       },
     ],
@@ -855,6 +899,9 @@ const fragmentosDeTexto = [
     opcoes: [
       {
         texto: 'take a walk in the park',
+        desativar: function(){
+          desativarEstado(fear);
+        },
         proximoTexto: 39,
       },
     ],
@@ -868,6 +915,9 @@ const fragmentosDeTexto = [
     opcoes: [
       {
         texto: 'take a walk',
+        desativar: function(){
+          desativarEstado(fear);
+        },
         proximoTexto: 39,
       },
     ],
@@ -1030,6 +1080,9 @@ const fragmentosDeTexto = [
       },
       {
         texto: '...is that a living room?..',
+        desativar: function(){
+          desativarEstado(tired);
+        },
         proximoTexto: 52,
       },
     ],
@@ -1150,6 +1203,12 @@ const fragmentosDeTexto = [
       {
         //!SOM DE MAQUINA LIGANDO
         texto: `a loud thud breaks silence`,
+        desativar: function(){
+          desativarEstado(excited);
+        },
+        ativar: function(){
+          ativarEstado(fear);
+        },
         proximoTexto: 56,
       },
     ],
@@ -1396,6 +1455,9 @@ const fragmentosDeTexto = [
     opcoes: [
       {
         texto: `go back to hotel`,
+        ativar: function(){
+          ativarEstado(tired);
+        },
         proximoTexto: 72,
       },
       {
@@ -1412,6 +1474,9 @@ const fragmentosDeTexto = [
     opcoes: [
       {
         texto: `what is it?`,
+        ativar: function(){
+          ativarEstado(excited);
+        },
         proximoTexto: 74,
       },
     ],
@@ -1423,6 +1488,9 @@ const fragmentosDeTexto = [
     opcoes: [
       {
         texto: `what is it?`,
+        ativar: function(){
+          ativarEstado(excited);
+        },
         proximoTexto: 74,
       },
     ],
@@ -1435,6 +1503,9 @@ const fragmentosDeTexto = [
     opcoes: [
       {
         texto: `grab shotgun`,
+        ativar: function(){
+          ativarEstado(gun);
+        },
         proximoTexto: 75,
       },
     ],
@@ -1459,6 +1530,12 @@ const fragmentosDeTexto = [
     opcoes: [
       {
         texto: `you little shit`,
+        desativar: function(){
+          desativarEstado(tired);
+        },
+        desativar: function(){
+          desativarEstado(fear);
+        },
         proximoTexto: 77,
       },
     ],
@@ -1551,6 +1628,12 @@ const fragmentosDeTexto = [
     opcoes: [
       {
         texto: `what now?`,
+        ativar: function(){
+          ativarEstado(tired);
+        },
+        desativar: function(){
+          desativarEstado(excited);
+        },
         proximoTexto: 84,
       },
     ],
@@ -1628,6 +1711,9 @@ const fragmentosDeTexto = [
     opcoes: [
       {
         texto: `deep silence`,
+        desativar: function(){
+          desativarEstado(gun);
+        },
         proximoTexto: 90,
       },
     ],
@@ -1639,6 +1725,9 @@ const fragmentosDeTexto = [
     opcoes: [
       {
         texto: `deep silence`,
+        desativar: function(){
+          desativarEstado(gun);
+        },
         proximoTexto: 90,
       },
     ],
@@ -1686,6 +1775,9 @@ const fragmentosDeTexto = [
       {
         texto: `hold scream
         `,
+        ativar: function(){
+          ativarEstado(fear);
+        },
         proximoTexto: 94,
       },
     ],
@@ -1700,6 +1792,9 @@ const fragmentosDeTexto = [
       {
         texto: `machine turns on again
         `,
+        ativar: function(){
+          ativarEstado(gun);
+        },
         proximoTexto: 95,
       },
     ],
@@ -1724,6 +1819,9 @@ const fragmentosDeTexto = [
     opcoes: [
       {
         texto: `they need to be stopped--I need...`,
+        ativar: function(){
+          ativarEstado(excited);
+        },
         proximoTexto: 97,
       },
     ],
